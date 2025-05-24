@@ -5,8 +5,8 @@
 const API_BASE_URL = 'https://catalogo-maillots-rc.onrender.com/api'; // URL DE TU BACKEND EN RENDER
 // LOCAL_STORAGE_KEY se usa solo para SESSION_AUTH_KEY si esta última no se usara directamente.
 // const LOCAL_STORAGE_KEY = 'misMaillotsData'; 
-const RANDOM_ITEMS_COUNT = 11; // Número de maillots aleatorios a mostrar. Considera si es un buen número.
-const ITEMS_PER_PAGE = 55;   // Maillots por página en el catálogo. Considera si es un buen número.
+const RANDOM_ITEMS_COUNT = 5; // Número de maillots aleatorios a mostrar. Considera si es un buen número.
+const ITEMS_PER_PAGE = 20;   // Maillots por página en el catálogo. Considera si es un buen número.
 const EDIT_PASSWORD = "ritmicacenter"; // Contraseña para habilitar la edición. ¡CAMBIAR EN PRODUCCIÓN!
 const SESSION_AUTH_KEY = 'maillotEditorAutenticado'; // Clave para sessionStorage de autenticación.
 
