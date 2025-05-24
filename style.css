@@ -1,0 +1,369 @@
+/* ==========================================================================
+   1. Estilos Generales y del Body
+   ========================================================================== */
+
+body {
+  font-family: sans-serif; /* Fuente base para la aplicación. */
+  /* Gradiente radial como fondo general. */
+  background: #EEAECA; 
+  background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+  margin: 0;
+  padding: 15px; /* Espaciado general para el contenido respecto a los bordes de la ventana. */
+}
+
+#app {
+  max-width: 1200px; /* Ancho máximo del contenido principal para mejor legibilidad. */
+  margin: 0 auto;    /* Centrado del contenedor principal. */
+  background-color: rgba(255, 255, 255, 0.4); /* Fondo semitransparente para el área de contenido. */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Sombra sutil para destacar el contenedor. */
+}
+
+/* ==========================================================================
+   2. Encabezado y Logo
+   ========================================================================== */
+
+.site-header { /* Contenedor para el logo y posible navegación futura. */
+  margin-bottom: 20px;
+}
+
+.logo-container {
+  text-align: center; /* Centrado del logo. */
+  padding: 10px 0;
+}
+
+.logo-image {
+  width: 250px;
+  max-width: 100%; /* Asegura responsividad. */
+  height: auto;
+}
+
+/* ==========================================================================
+   3. Estructura de Secciones y Divisores
+   ========================================================================== */
+
+.maillot-section {
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f0eaff; /* Un color de fondo ligeramente diferente al tuyo original para más contraste. */
+}
+
+.maillot-section h2 {
+  margin-top: 0;
+  color: #8c00d1; /* Color distintivo para los títulos de sección. */
+  border-bottom: 2px solid #8c00d1;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.section-divider {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #d0c0e8; /* Línea divisoria sutil. */
+}
+
+/* ==========================================================================
+   4. Cuadrícula de Maillots y Estilo de Items (Tarjetas)
+   ========================================================================== */
+
+.maillot-grid {
+  display: grid;
+  /* Columnas automáticas con un tamaño mínimo y que ocupan el espacio disponible. */
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem; /* Espacio entre tarjetas. */
+  margin-top: 1rem;
+}
+
+.maillot-item {
+  border: 1px solid #d8c4f7;
+  padding: 1rem;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  /* Flexbox para distribuir el espacio interno, útil para alinear el botón al final. */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+}
+
+.maillot-item:hover {
+  transform: translateY(-4px); /* Efecto sutil al pasar el cursor. */
+  box-shadow: 0 5px 10px rgba(0,0,0,0.12);
+}
+
+.maillot-item strong { /* Estilo para el Nº de Modelo. */
+    display: block;
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.maillot-item img {
+  max-width: 100%;
+  height: 180px; /* Altura fija para consistencia visual. */
+  object-fit: contain; /* Asegura que la imagen se vea completa y sin deformar. */
+  display: block;
+  margin: 0 auto 0.75rem auto;
+  border-radius: 4px;
+}
+
+.maillot-item .tags {
+  font-size: 0.8em;
+  color: #555;
+  margin-bottom: 10px;
+  line-height: 1.4;
+  flex-grow: 1; /* Permite que esta sección ocupe el espacio vertical disponible. */
+}
+
+.maillot-item button.edit-tags-btn {
+  margin-top: auto; /* Empuja el botón hacia abajo si es un item flex. */
+  padding: 6px 12px;
+  background-color: #ee75d0;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.2s ease;
+  align-self: center; /* Centra el botón horizontalmente en el contenedor flex. */
+  width: fit-content;
+}
+
+.maillot-item button.edit-tags-btn:hover {
+  background-color: #d1009d;
+}
+
+/* ==========================================================================
+   5. Barra de Búsqueda
+   ========================================================================== */
+
+#searchInput {
+  display: block;
+  width: 100%; 
+  box-sizing: border-box; /* Incluye padding y borde en el ancho total. */
+  padding: 12px;
+  margin-bottom: 25px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* ==========================================================================
+   6. Controles de Paginación
+   ========================================================================== */
+
+#paginationControlsContainer {
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+
+#paginationControlsContainer button,
+#paginationControlsContainer span.page-number { /* Aplicar a botones y spans que actúen como números */
+  margin: 0 4px;
+  padding: 8px 12px;
+  border: 1px solid #d69ac0;
+  background: #EEAECA;
+  color: #44002c;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  font-size: 0.9em;
+}
+
+#paginationControlsContainer button:hover:not(:disabled),
+#paginationControlsContainer span.page-number:hover {
+  background-color: #e799b9;
+}
+
+#paginationControlsContainer button:disabled {
+  background-color: #f0f0f0;
+  color: #aaa;
+  cursor: not-allowed;
+  border-color: #e0e0e0;
+}
+
+/* Estilo para el número de la página actual. */
+#paginationControlsContainer button.active-page, /* Si usas botones para números */
+#paginationControlsContainer span.active-page {  /* Si usas spans para números */
+  background-color: #8c00d1;
+  color: white;
+  border-color: #7a00b8;
+  font-weight: bold;
+  cursor: default;
+}
+
+#paginationControlsContainer span.pagination-dots { /* Para los '...' */
+    padding: 8px 0; /* Ajustar padding para alinear mejor con botones */
+    cursor: default;
+    border: none;
+    background-color: transparent;
+    color: #555;
+}
+
+
+/* ==========================================================================
+   7. Modal de Edición de Etiquetas
+   ========================================================================== */
+
+.modal {
+  display: none; /* Oculto por defecto, gestionado por JavaScript. */
+  position: fixed; /* Se queda fijo en la pantalla. */
+  z-index: 1000;   /* Por encima de otros elementos. */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Scroll si el contenido es muy largo. */
+  background-color: rgba(0,0,0,0.6); /* Fondo oscuro semitransparente. */
+  /* Centrado del contenido del modal usando Flexbox. */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto; /* Ayuda al centrado, aunque flex ya lo hace. */
+  padding: 25px; /* Más padding interno. */
+  border: 1px solid #adb5bd; /* Borde más suave. */
+  width: 90%; /* Más responsivo en móviles. */
+  max-width: 550px; /* Ancho máximo. */
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  position: relative; /* Para posicionar el botón de cerrar. */
+  animation: fadeInModal 0.3s ease-out; /* Pequeña animación al aparecer. */
+}
+
+/* Animación para el modal (opcional) */
+@keyframes fadeInModal {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.close-modal-btn {
+  color: #6c757d; /* Un gris más oscuro. */
+  position: absolute; /* Posicionamiento absoluto respecto a .modal-content. */
+  top: 10px;
+  right: 15px;
+  font-size: 32px; /* Ligeramente más grande. */
+  font-weight: bold;
+  line-height: 1; /* Para mejor control vertical del 'times'. */
+  transition: color 0.2s ease;
+}
+
+.close-modal-btn:hover,
+.close-modal-btn:focus {
+  color: #343a40; /* Más oscuro al hacer hover. */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-image-container {
+  text-align: center;
+  margin-bottom: 20px; /* Más espacio. */
+}
+
+#modalMaillotImagen {
+  max-width: 100%;
+  max-height: 250px; /* Altura máxima de la imagen dentro del modal. */
+  height: auto;
+  border: 1px solid #dee2e6; /* Borde sutil. */
+  border-radius: 4px;
+  object-fit: contain;
+}
+
+#modalCurrentTags .tag-chip {
+  display: inline-flex; /* Flex para alinear texto y botón de borrar. */
+  align-items: center;
+  background-color: #e9ecef; /* Un gris más claro. */
+  color: #343a40; /* Texto más oscuro. */
+  padding: 6px 12px;
+  border-radius: 16px; /* Más redondeado para forma de "píldora". */
+  margin-right: 6px;
+  margin-bottom: 6px;
+  font-size: 0.9em;
+}
+
+#modalCurrentTags .tag-chip .delete-tag-btn {
+  margin-left: 8px;
+  color: #dc3545; /* Un rojo más estándar para "borrar". */
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: 1.1em; /* Botón 'x' un poco más grande. */
+  line-height: 1;
+  padding: 0 2px; /* Pequeño padding para facilitar el click. */
+}
+#modalCurrentTags .tag-chip .delete-tag-btn:hover {
+    color: #a71d2a;
+}
+
+.add-tag-controls {
+  margin-top: 15px;
+  margin-bottom: 20px; /* Más espacio. */
+  display: flex; /* Para alinear input y botón. */
+}
+
+.add-tag-controls input[type="text"] {
+  flex-grow: 1; /* Input ocupa el espacio disponible. */
+  padding: 10px; /* Padding más generoso. */
+  margin-right: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 0.95em;
+}
+
+.add-tag-controls button { /* Estilo para el botón "Añadir Etiqueta" */
+    padding: 10px 15px;
+    background-color: #5c6bc0; /* Un color índigo/púrpura. */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.add-tag-controls button:hover {
+    background-color: #3f51b5;
+}
+
+
+.modal-actions {
+  text-align: right; /* Alinea los botones a la derecha. */
+  margin-top: 20px;
+}
+
+.modal-actions button {
+  padding: 10px 20px; /* Padding más generoso. */
+  margin-left: 10px; /* Margen a la izquierda en lugar de a la derecha. */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500; /* Ligeramente más bold. */
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.modal-actions #saveTagsChangesBtn {
+  background-color: #28a745; /* Verde para guardar. */
+  color: white;
+}
+.modal-actions #saveTagsChangesBtn:hover {
+  background-color: #218838;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.modal-actions .cancel-btn {
+  background-color: #6c757d; /* Gris para cancelar. */
+  color: white;
+}
+.modal-actions .cancel-btn:hover {
+  background-color: #5a6268;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}

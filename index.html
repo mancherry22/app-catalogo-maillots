@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/RC_LOGO2.png" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Catálogo Rítmica Center</title>
+  
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <header id="encabezado" class="site-header">
+    <div class="logo-container">
+      <img src="/RC_LOGO.png" alt="Logo Rítmica Center" class="logo-image">
+    </div>
+  </header> 
+
+  <div id="app">
+    <main> <section class="maillot-section" aria-labelledby="random-maillots-title">
+        <h2 id="random-maillots-title">Descubre Algunos Modelos</h2>
+        <div id="randomMaillotListContainer" class="maillot-grid">
+          </div>
+      </section>
+
+      <hr class="section-divider">
+
+      <section class="maillot-section" aria-labelledby="full-catalog-title">
+        <h2 id="full-catalog-title">Catálogo Completo</h2>
+        <input type="search" id="searchInput" placeholder="Buscar por nº modelo o etiqueta..." aria-label="Buscar maillots">
+        <div id="paginatedMaillotListContainer" class="maillot-grid">
+          </div>
+        <div id="paginationControlsContainer">
+          </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="editTagsModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-modal="true" style="display:none;">
+    <div class="modal-content">
+      <button class="close-modal-btn" id="closeModalBtn" aria-label="Cerrar modal">&times;</button>
+      <h2 id="modalTitle">Editar Etiquetas para Maillot: <span id="modalMaillotNoTitulo"></span></h2>
+      
+      <div class="modal-image-container">
+        <img id="modalMaillotImagen" src="" alt="Imagen del Maillot seleccionado para editar etiquetas" />
+      </div>
+      
+      <div id="modalCurrentTags" aria-live="polite">
+        </div>
+      
+      <div class="add-tag-controls">
+        <input type="text" id="newTagInput" placeholder="Nueva etiqueta (ej: ROJO, VERANO)" aria-label="Añadir nueva etiqueta">
+        <button id="addNewTagBtn">Añadir Etiqueta</button>
+      </div>
+      
+      <div class="modal-actions">
+        <button id="saveTagsChangesBtn">Guardar Cambios</button>
+        <button id="cancelEditBtn" class="cancel-btn">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>

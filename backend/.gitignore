@@ -1,0 +1,40 @@
+# Dependencias y archivos de build
+node_modules/
+dist/
+coverage/
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Variables de entorno locales (si las usas y no deben ir al repo)
+.env
+.env*.local
+!.env.example
+
+# Archivos de configuración de IDEs
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Cache de Vite
+.vite/
+
+# Carpeta de imágenes fuente si decides no subirla al repo principal
+# (aunque para este proyecto, podría ser útil tenerla si el script la necesita)
+# fuente_imagenes/ 
+# Si quieres que el script siempre tenga acceso a fuente_imagenes desde el repo, comenta la línea de arriba.
+# Por ahora, la dejaremos comentada para que SÍ se suba, ya que tu script la usa.
+
+# Backend node_modules (si tienes un package.json separado en backend/)
+backend/node_modules/
