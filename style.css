@@ -367,3 +367,127 @@ body {
   background-color: #5a6268;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+
+/* ==========================================================================
+   8. ESTILOS RESPONSIVOS PARA MÓVILES Y PANTALLAS PEQUEÑAS
+   ========================================================================== */
+
+/* Aplico estos estilos cuando el ancho de la pantalla sea 600px o menos.
+   Puedes experimentar con este valor (ej. 768px para tablets y móviles). */
+@media (max-width: 600px) {
+
+  /* Ajustes generales para el cuerpo y el contenedor principal de la app. */
+  body {
+    padding: 8px; /* Reduzco el padding general en móviles. */
+    font-size: 15px; /* Puedo ajustar el tamaño de fuente base si es necesario. */
+  }
+
+  #app {
+    padding: 10px; /* Reduzco el padding del contenedor principal. */
+  }
+
+  /* El logo puede ser un poco más pequeño. */
+  .logo-image {
+    width: 180px; 
+  }
+
+  /* Títulos de sección más compactos. */
+  .maillot-section h2 {
+    font-size: 1.4em; /* Un poco más pequeños. */
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+  }
+
+  /* Ajusto la cuadrícula de maillots para que quepan mejor. */
+  .maillot-grid {
+    /* Intento que quepan al menos dos maillots por fila.
+       Ajusto el tamaño mínimo de cada item. */
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); 
+    gap: 0.8rem; /* Espacio entre tarjetas un poco más pequeño. */
+  }
+
+  /* Hago cada "tarjeta" de maillot más compacta. */
+  .maillot-item {
+    padding: 0.75rem;
+    border-radius: 6px;
+  }
+
+  .maillot-item strong { /* Para el "Modelo X" */
+    font-size: 0.95em; /* Un poco más pequeño. */
+    margin-bottom: 6px;
+  }
+
+  .maillot-item img {
+    height: 110px; /* Reduzco significativamente la altura de la imagen. */
+    margin-bottom: 0.6rem;
+  }
+
+  .maillot-item .tags {
+    font-size: 0.7em; /* Etiquetas más pequeñas. */
+    margin-bottom: 8px;
+    line-height: 1.25;
+  }
+
+  .maillot-item button.edit-tags-btn {
+    font-size: 0.75em; /* Botón de editar más pequeño. */
+    padding: 5px 8px;
+  }
+
+  /* Barra de búsqueda. */
+  #searchInput {
+    padding: 10px;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+  }
+
+  /* Controles de paginación más compactos. */
+  #paginationControlsContainer button,
+  #paginationControlsContainer span.page-number, /* Si usas spans para números de página */
+  #paginationControlsContainer span.pagination-dots { /* Para los "..." */
+    padding: 5px 9px;
+    font-size: 0.8em;
+    margin: 0 2px; /* Menos margen entre botones. */
+  }
+
+  /* Modal en móviles. */
+  .modal-content {
+    width: 95%; /* El modal ocupa casi todo el ancho. */
+    padding: 15px; /* Menos padding interno. */
+    max-height: 90vh; /* Asegura que no sea más alto que la pantalla. */
+    overflow-y: auto; /* Permite scroll dentro del modal si el contenido es largo. */
+  }
+
+  #modalMaillotImagen {
+    max-height: 150px; /* La imagen dentro del modal también más pequeña. */
+  }
+
+  /* Controles para añadir etiquetas en el modal. */
+  .add-tag-controls {
+    flex-direction: column; /* Apilo el input y el botón verticalmente. */
+  }
+  .add-tag-controls input[type="text"] {
+    margin-right: 0;
+    margin-bottom: 10px; /* Espacio entre el input y el botón. */
+    width: 100%; /* Ocupan todo el ancho. */
+    box-sizing: border-box; /* Para que el padding no afecte el ancho total. */
+  }
+  .add-tag-controls button {
+    width: 100%; /* Botón ocupa todo el ancho. */
+  }
+
+  /* Botones de acción del modal. */
+  .modal-actions {
+    /* Podrías considerar apilarlos también si se ven muy apretados. */
+    /* text-align: center; */ /* Por ejemplo */
+  }
+   .modal-actions button {
+    /* width: 100%; */
+    /* margin-left: 0; */
+    /* margin-top: 8px; */
+    /* margin-bottom: 5px; */
+    padding: 8px 15px; /* Un poco menos de padding */
+   }
+   /* .modal-actions button:last-child { */
+    /* margin-bottom: 0; */
+   /* } */
+}
