@@ -1,7 +1,8 @@
 // =================================================================================
 // I. CONSTANTES Y CONFIGURACIÓN
 // =================================================================================
-const API_BASE_URL = 'http://localhost:3001/api';
+//const API_BASE_URL = 'http://localhost:3001/api';
+const API_BASE_URL = 'https://catalogo-maillots-rc.onrender.com/api'; // URL DE TU BACKEND EN RENDER
 // LOCAL_STORAGE_KEY se usa solo para SESSION_AUTH_KEY si esta última no se usara directamente.
 // const LOCAL_STORAGE_KEY = 'misMaillotsData'; 
 const RANDOM_ITEMS_COUNT = 11; // Número de maillots aleatorios a mostrar. Considera si es un buen número.
