@@ -476,10 +476,10 @@ body {
   }
 
   /* Botones de acción del modal. */
-  .modal-actions {
+  /*.modal-actions {
     /* Podrías considerar apilarlos también si se ven muy apretados. */
     /* text-align: center; */ /* Por ejemplo */
-  }
+    
    .modal-actions button {
     /* width: 100%; */
     /* margin-left: 0; */
